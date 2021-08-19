@@ -1,0 +1,19 @@
+<div class="sector-2">
+    <form class="form form-content">
+        <h2 class="title">Toggle Imagem </h2>
+        <div class="image-area">
+            <img src="../../../../assets/images/logo.png"  *ngIf="showing">
+        </div>
+        <div class="row align-items-center button-area mt-2" >
+            <div class="col-4 col-status">
+              <label class="col-form-label status"[ngClass]="showing==true?'green':'red'">{{status}}</label>
+            </div>
+            <div class="col-2 col-button">
+                <button type="button" class="btn show-hide" (click)="onClick()">
+                    <i class="bi bi-eye{{icon}}"></i>
+                </button>
+            </div>
+
+        </div>
+    </form>
+</div>

@@ -5,11 +5,11 @@ import { Injectable } from '@angular/core';
 })
 export class OperationsService {
   
+  sum_fibo:number[]= [0,1];
+
+  show:boolean=true;
 
   constructor() { }
-
-  
-  sum_fibo:number[]= [0,1];
 
   public sumFibonacci():number{
     this.sum_fibo.push(this.sum_fibo[this.sum_fibo.length-1] + this.sum_fibo[this.sum_fibo.length-2]);
@@ -22,6 +22,15 @@ export class OperationsService {
     
     return this.sum_fibo[this.sum_fibo.length-1];
   }
-  
+
+
+  public showOrHide():boolean{
+    this.show=!this.show;
+    let value=this.show;
+    console.log(value);
+    return value;
+  }
+
+
 }
 
