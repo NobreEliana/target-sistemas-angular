@@ -1,3 +1,4 @@
+import { Message } from '@angular/compiler/src/i18n/i18n_ast';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -9,6 +10,8 @@ export class OperationsService {
 
   show:boolean=true;
 
+  
+  
   constructor() { }
 
   public sumFibonacci():number{
@@ -31,6 +34,19 @@ export class OperationsService {
     return value;
   }
 
+  public findNumber(user_num:number, matrix:number[]){
+    let selected= matrix.findIndex((num)=>num===user_num);
+    console.log(selected);
+    console.log(matrix);
 
+    return selected;
+  }
+
+  public verify(sel:any, user_num:number):string{
+    let message="";
+    if(sel==-1){
+       message=  user_num + " é um valor inválido. Por favor, informe um número de 0 a 10!";
+    }
+    return message;
+  }
 }
-

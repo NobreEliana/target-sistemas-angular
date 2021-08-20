@@ -1,0 +1,11 @@
+<div class="sector-3">
+    <form class="form-content" [formGroup]="form_content">
+        <h2 class="title">Matriz</h2>
+        <input type="text" class="form-control" formControlName="number_user" placeholder="Digite um número de 0 a 10:">
+        <span class="error">{{message}}</span>
+        <img src="../../../../assets/images/search.png" (click)="searchNumber()" class="img_btn">
+        <label class="num_label" style="display: block;">
+            <span [ngClass]="{'selected':item == selected}" *ngFor="let item of matriz">{{item + " "}}</span>
+        </label>
+    </form>
+</div>
